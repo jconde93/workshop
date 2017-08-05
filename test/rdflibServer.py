@@ -1,4 +1,3 @@
-
 import socket
 import sys
 import rdflib
@@ -22,14 +21,19 @@ conn, addr = s.accept()
 print('Connected with {}:{}'.format(addr[0], str(addr[1])))
 
 store = []
-result = s.recv(4096)
+result = conn.recv(4096)
 while (len(result) > 0):
     store.append(result.decode('utf-8'))
-    result = s.recv(4096)
+    result = conn.recv(4096)
+
+
+if len(result) <= 0:
+    conn.close()
 
 print('Printing Store:')
-print(store.join())
 
-s.sendall(str.encode(''))
+for t in store:
+    print(t)
 
-conn.close()
+s.sendall(str.encode('Thanks'))
+

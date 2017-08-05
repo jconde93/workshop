@@ -1,6 +1,10 @@
 import socket
 import sys
 import rdflib
+from signal import signal, SIGPIPE, SIG_DFL
+# fix broken pipe error
+# https://stackoverflow.com/questions/14207708/ioerror-errno-32-broken-pipe-python
+signal(SIGPIPE, SIG_DFL)
 
 host = ''
 port = 5555

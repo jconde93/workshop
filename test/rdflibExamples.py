@@ -15,10 +15,5 @@ server = '192.168.0.26'
 port = 5555
 
 s.connect((server, port))
-s.send(data)
+s.sendall(data)
 
-result = s.recv(4096)
-
-while (len(result) > 0):
-    print(result)
-    result = s.recv(4096)

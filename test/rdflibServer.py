@@ -34,6 +34,3 @@ print('Printing Store:')
 
 for t in store:
     print(t)
-
-s.sendall(str.encode('Thanks'))
-

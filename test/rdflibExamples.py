@@ -11,7 +11,7 @@ print('graph has {} statements'.format(len(g)))
 data = g.serialize(format='n3')
 
 #
-server = '192.168.0.26'
+server = '192.168.0.67'
 port = 5555
 
 s.connect((server, port))
